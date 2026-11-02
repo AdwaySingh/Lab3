@@ -35,8 +35,21 @@ def bubble_sort(arr, sorting_order):
                     arr_result = []
     else:
         arr_result = -1
+        if n>=10: # REQ-03: The list has 10 or more items.
+            return 1
+        if n==0: # REQ-04: The list is empty.
+            return 0
+                # REQ-05: Check whether every item in the list is integer.
+        for item in arr_result:
+            if (isinstance(item, int))==False:
+                return 2
+        
 
     return arr_result
+
+
+
+
 
 def main():
     # Driver code to test above
@@ -51,7 +64,6 @@ def main():
     print("Sorted array in descending order: ")
     result = bubble_sort(arr, SORT_DESCENDING)
     print(result)
-
 if __name__ == "__main__":
     main()
 
